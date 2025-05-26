@@ -17,11 +17,11 @@ def create_app():
     CORS(app, 
          resources={r"/*": {
             "origins": ["https://calidad-servidor-front.vercel.app"],
-            "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-            "allow_headers": ["Content-Type", "Authorization"]
          }}, 
-         supports_credentials=True)
-
+         supports_credentials=True,
+         methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+         allow_headers=["Content-Type", "Authorization"]
+        )
     db.init_app(app)
     JWTManager(app)
     #with app.app_context():
