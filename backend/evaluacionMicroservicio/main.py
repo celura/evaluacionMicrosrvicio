@@ -16,7 +16,7 @@ def create_app():
     
     CORS(app, 
          resources={r"/*": {
-            "origins": ["https://calidad-servidor-front.vercel.app/"],
+            "origins": ["https://calidad-servidor-front.vercel.app"],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
             "allow_headers": ["Content-Type", "Authorization"]
          }}, 
